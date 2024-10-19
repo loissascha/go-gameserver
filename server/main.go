@@ -132,6 +132,7 @@ func (s *Server) handleConnection(w http.ResponseWriter, r *http.Request) {
 			// Update player's position
 			var pos [2]float64
 			err := parseData(res.Data, &pos) 
+			fmt.Println(res.Data)
 			if err != nil {
 				fmt.Println("Can't update player position! Parsing error!")
 				continue
