@@ -11,6 +11,8 @@ import (
 	"github.com/gorilla/websocket"
 )
 
+var port = ":11811"
+
 // Player represents a connected player's data
 type Player struct {
 	ID       string          `json:"id"`
@@ -159,8 +161,8 @@ func main() {
 
 	go server.broadcastPlayers()
 
-	log.Println("Server started on :8080")
-	err := http.ListenAndServe(":8080", nil)
+	log.Println("Server started on", port)
+	err := http.ListenAndServe(port, nil)
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}

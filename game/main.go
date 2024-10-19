@@ -29,6 +29,7 @@ var (
 var gameWindowConfig opengl.WindowConfig
 var gameWindow *opengl.Window
 var gameServer *websocket.Conn
+var serverAddress = "ws://sl0.at:11811/ws"
 
 type OtherPlayerResult struct {
 	ID       string     `json:"id"`
@@ -280,7 +281,7 @@ func getImageSprite(path string) *pixel.Sprite {
 }
 
 func main() {
-	conn, _, err := websocket.DefaultDialer.Dial("ws://localhost:8080/ws", nil)
+	conn, _, err := websocket.DefaultDialer.Dial(serverAddress, nil)
 	if err != nil {
 		panic(err)
 	}
