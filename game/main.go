@@ -29,7 +29,7 @@ var (
 var gameWindowConfig opengl.WindowConfig
 var gameWindow *opengl.Window
 var gameServer *websocket.Conn
-var serverAddress = "ws://sl0.at:11811/ws"
+var serverAddress = "ws://localhost:11811/ws"
 
 type OtherPlayerResult struct {
 	ID       string     `json:"id"`
